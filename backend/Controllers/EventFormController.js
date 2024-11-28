@@ -6,17 +6,30 @@ const CreateEventByOrganization = async (req, res) => {
     const ExisedEvent = await EventData.findOne({ name: name });
 
     if (ExisedEvent) {
-      res.status(402).json({ message: "Event is existed", success: false });
+      return res.status(402).json({ message: "Event is existed", success: false });
     }
 
     const CreateEvent = await EventData.create(req.body);
-    CreateEvent.save();
-    res.status(202).json({ message: "Event is saved", success: true });
+    res.status(200).json({ message: "Event is created", success: true });
   } catch (error) {
     res.status(502).json({ message: "internal server error", success: false });
     console.log(error);
   }
 };
+
+const GetAllEvents  = async (req,res) => {
+  try {
+    const getEvent = await EventData.find({});
+    if (!getEvent) {
+      return res.status(404)
+          .json({message:"No events available" , success:false});
+    }
+    res.status(200).json({ message: "Events retrieved successfully", events:getEvent, success: true });
+  } catch (error) {
+    console.log(error);
+    res.status(502).json({ message: "internal server error", success: false });
+  }
+}
 
 const GetEventById = async (req, res) => {
   try {
@@ -24,12 +37,12 @@ const GetEventById = async (req, res) => {
     const Event = await EventData.findById(id);
 
     if (!Event) {
-      res.status(403).json({ message: "event is not Existed", success: false });
+      return res.status(403).json({ message: "Event does not exist", success: false });
     }
 
     res
-      .status(203)
-      .json({ message: "Event is existed", Event: Event, success: true });
+      .status(200)
+      .json({ message: "Event retrieved successfully", Event: Event, success: true });
   } catch (error) {
     console.log(error);
     res.status(502).json({ message: "internal server error", success: false });
@@ -42,12 +55,12 @@ const UpdateEventByOrganization = async (req, res) => {
     const Event = await EventData.findById(id);
 
     if (!Event) {
-      res.status(403).json({ message: "event is not Existed", success: false });
+      return res.status(403).json({ message: "Event does not exist", success: false });
     }
 
     const UpdatedEvent = await EventData.findByIdAndUpdate(id, req.body);
 
-    res.status(203).json({ message: "Event is Updated", success: true });
+    res.status(200).json({ message: "Event updated successfully", success: true });
   } catch (error) {
     res.status(502).json({ message: "internal server error", success: false });
     console.log(error);
@@ -60,10 +73,10 @@ const DeleteEventByOrganization = async (req, res) => {
         const Event = await EventData.findById(id);
     
         if (!Event) {
-          res.status(403).json({ message: "event is not Existed", success: false });
+          return res.status(403).json({ message: "Event does not exist", success: false });
         }
         const DeleteEvent = await EventData.findByIdAndDelete(id);
-        res.status(203).json({ message: "Event is Deleted", success: true });
+        res.status(200).json({ message: "Event deleted successfully", success: true });
       } catch (error) {
         res.status(502).json({ message: "internal server error", success: false });
         console.log(error);
@@ -72,6 +85,7 @@ const DeleteEventByOrganization = async (req, res) => {
 
 module.exports = {
   CreateEventByOrganization,
+  GetAllEvents,
   GetEventById,
   UpdateEventByOrganization,
   DeleteEventByOrganization,

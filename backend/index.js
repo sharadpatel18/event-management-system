@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const AuthRoutes = require('./Routes/AuthRoute');
 const EventFormRoutes = require('./Routes/EventFormRoutes');
-const Connetion = require('./Utilities/Connection');
+const Connection = require('./Utilities/Connection');
 require('dotenv').config();
 
 app.use(cors());

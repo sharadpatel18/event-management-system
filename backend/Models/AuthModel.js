@@ -2,16 +2,22 @@ const mongoose = require('mongoose')
 
 const AuthSchema = new mongoose.Schema({
     name:{
-        type:String
+        type:String,
+        required: [true , 'Name is required']
     },
     email:{
-        type:String
+        type:String,
+        required: [true, 'Email is required'],
+        unique: true,
+        match: [/^\S+@\S+\.\S+$/, 'Email is invalid']
     },
     password:{
-        type:String
+        type:String,
+        required: [true, 'Password is required']
     },
     isAdmin:{
-        type:Boolean
+        type:Boolean,
+        default: false
     }
 })
 

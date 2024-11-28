@@ -9,12 +9,11 @@ const SignupController = async (req, res) => {
     const existedUser = await User.findOne({ email: email });
 
     if (existedUser) {
-      res.status(401).json({ message: "User is existed", success: false });
+      return res.status(401).json({ message: "User is existed", success: false });
     }
 
-    const CreateUser = await User.create({ name, email, password, isAdmin });
-    CreateUser.password = await bcrypt.hash(password, 10);
-    CreateUser.save();
+    const hashPass = await bcrypt.hash(password, 10);
+    const CreateUser = await User.create({ name, email, password:hashPass, isAdmin });
 
     res.status(201).json({ message: "user is created", success: true });
   } catch (error) {
@@ -27,14 +26,14 @@ const LoginController = async (req, res) => {
  try {
     const { email, password } = req.body;
     const existedUser = await User.findOne({ email: email });
-    const ComparePass = bcrypt.compare(password, existedUser.password);
+    const ComparePass = await bcrypt.compare(password, existedUser.password);
   
     if (!existedUser) {
-      res.status(401).json({ message: "user is not existed", success: false });
+      return res.status(401).json({ message: "user is not existed", success: false });
     }
   
     if (!ComparePass) {
-      res
+      return res
         .status(402)
         .json({ message: "email or password are wrong", success: false });
     }

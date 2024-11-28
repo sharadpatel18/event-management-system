@@ -4,8 +4,8 @@ const Authentication = (req, res, next) => {
   try {
     const auth = req.headers["authorization"];
     if (!auth) {
-      res.status(403).json({
-        message: "unauthorized , jwt token is require",
+      return res.status(403).json({
+        message: "Unauthorized, JWT token is required",
         success: false,
       });
     }
@@ -17,7 +17,7 @@ const Authentication = (req, res, next) => {
       console.log(error);
       return res
         .status(401)
-        .json({ message: "unauthorized , jwt token is require" });
+        .json({ message: "Unauthorized, invalid JWT token" });
     }
   } catch (error) {
     res.status(503).json({
