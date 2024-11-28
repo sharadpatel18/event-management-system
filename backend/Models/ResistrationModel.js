@@ -8,12 +8,14 @@ const ResistrationForm = new mongoose.Schema({
     email: {
         type: String,
         required: [true, 'Email is required'],
+        unique: true,
         match: [/^\S+@\S+\.\S+$/, 'Email is invalid']
     },
     number: {
         type: Number,
         required: [true, 'Phone number is required'],
-        min: [1000000000, 'Phone number is too short']
+        unique: true,
+        min: [1000000000, 'Phone number is too short'],
     },
     age: {
         type: Number,
@@ -33,8 +35,13 @@ const ResistrationForm = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'EventData',
         required: [true, 'Event ID is required']
+    },
+    expireAt:{
+        type:mongoose.Schema.Types.Date,
+        ref: 'EventData',
+        required: [true, 'Event expire date is required']
     }
 });
 
-const ResistrationData = mongoose.model('ResistrationData', ResistrationForm);
-module.exports = ResistrationData;
+const ResistratedUser = mongoose.model('ResistrationData', ResistrationForm);
+module.exports = ResistratedUser;
