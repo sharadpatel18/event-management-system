@@ -21,10 +21,14 @@ const FormSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Location is required']
     },
-    capacity: {
+    totalSeat: {
         type: Number,
-        required: [true, 'Capacity is required'],
+        required: [true, 'total seat is required'],
         min: [1, 'Capacity must be at least 1']
+    },
+    remainingSeat: {
+        type: Number,
+        required: [true, 'total seat required'],
     },
     organizerName: {
         type: String,
