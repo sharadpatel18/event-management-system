@@ -23,14 +23,18 @@ const ResistrationForm = new mongoose.Schema({
         min: [1, 'Age must be at least 1']
     },
     seatCount: {
-        type: Number,
-        required: [true, 'Seat count is required'],
-        min: [1, 'Seat count must be at least 1']
+        PlatinumSeat:Number,
+        GoldSeat:Number,
+        SilverSeat:Number
     },
-    // seatNo: {
-    //     type: {type:Number},
-    //     required: [true, 'Seat number is required']
-    // },
+    seatNo: {
+       PlatinumSeat:[Number],
+       GoldSeat:[Number],
+       SilverSeat:[Number]
+    },
+    totalprice:{
+        type:Number
+    },
     eventId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'EventData',

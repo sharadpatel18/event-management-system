@@ -2,14 +2,26 @@ const EventData = require("../Models/EventForm");
 
 const CreateEventByOrganization = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name , description , date , time , location , totalSeat , organizerName , contactInfo , image , category , expireAt} = req.body;
     const ExisedEvent = await EventData.findOne({ name: name });
-
+    const PlatinumSeat = [];
+    const GoldSeat = [];
+    const SilverSeat = [];
     if (ExisedEvent) {
       return res.status(402).json({ message: "Event is existed", success: false });
     }
 
-    const CreateEvent = await EventData.create(req.body);
+    for(let i=1 ; i<=totalSeat.platinum ; i++){
+      PlatinumSeat.push(i)
+    }
+    for(let i=1 ; i<=totalSeat.gold ; i++){
+      GoldSeat.push(i)
+    }
+    for(let i=1 ; i<=totalSeat.silver ; i++){
+      SilverSeat.push(i)
+    }``
+    
+    const CreateEvent = await EventData.create({name , description , date , time , location , totalSeat , remainingSeat:{PlatinumSeat:PlatinumSeat , GoldSeat:GoldSeat , SilverSeat:SilverSeat} , organizerName , contactInfo , image , category , expireAt});
     res.status(200).json({ message: "Event is created", success: true });
   } catch (error) {
     res.status(502).json({ message: "internal server error", success: false });

@@ -22,13 +22,14 @@ const FormSchema = new mongoose.Schema({
         required: [true, 'Location is required']
     },
     totalSeat: {
-        type: Number,
-        required: [true, 'total seat is required'],
-        min: [1, 'Capacity must be at least 1']
+        platinum:Number,
+        gold:Number,
+        silver:Number
     },
     remainingSeat: {
-        type: Number,
-        required: [true, 'total seat required'],
+        PlatinumSeat:[Number],
+        GoldSeat:[Number],
+        SilverSeat:[Number]
     },
     organizerName: {
         type: String,
@@ -45,6 +46,9 @@ const FormSchema = new mongoose.Schema({
         type: String,
         enum: ['Conference', 'Workshop', 'Meetup', 'Webinar', 'Other'], 
         required: [true, 'Category is required']
+    },
+    price:{
+        type:Number
     },
     expireAt: {
         type: Date,
