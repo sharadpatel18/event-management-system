@@ -50,6 +50,11 @@ const FormSchema = new mongoose.Schema({
     price:{
         type:Number
     },
+    isCompleted:{
+        type:Boolean,
+        required: [true , 'isCompleted is Required'],
+        default:true
+    },
     expireAt: {
         type: Date,
         default: () => new Date(+new Date() + 30*24*60*60*1000)

@@ -40,6 +40,11 @@ const ResistrationForm = new mongoose.Schema({
         ref: 'EventData',
         required: [true, 'Event ID is required']
     },
+    isCompleted:{
+        type:Boolean,
+        required: [true , 'isCompleted is Required'],
+        default:true
+    },
     expireAt:{
         type:mongoose.Schema.Types.Date,
         ref: 'EventData',

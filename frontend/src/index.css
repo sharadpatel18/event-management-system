@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+:root {
+    --maxWidth: 1080px;
+    --maximum_content_width: 1080px;
+    --primaryColor: #000000;
+    --secondaryColor: #1EBEB1;
+    --tertiaryColor: #093E3A;
+    --bodyBgColor: #ffffff;
+    --primaryColorRGB: 0, 0, 0;
+    --secondaryColorRGB: 30, 190, 177;
+    --tertiaryColorRGB: 9, 62, 58;
+    --bodyBgColorRGB: 255, 255, 255;
+    --heaaderBackgrounInicial: rgba(255, 255, 255, 0.0);
+    --anchorColor: #1EBEB1;
+    --anchorHoverColor: #000000;
+    --factorMobile: 1.2;
+    --fontSize: 16px;
+    --lineHeight: 1.5;
+    --letterSpacing: 0px;
+    --cornerRadius: 8px;
+    --cornerRadiusImage: 8px;
+    --fontHeroSizeH1: 36px;
+    --lineHeroHeightH1: 1.2;
+    --letterHeroSpacingH1: 0px;
+    --fontSizeH1: 36px;
+    --lineHeightH1: 1.2;
+    --letterSpacingH1: 0px;
+    --fontSizeH2: 29px;
+    --lineHeightH2: 1.2;
+    --letterSpacingH2: 0px;
+    --fontSizeH3: 23px;
+    --lineHeightH3: 1.2;
+    --letterSpacingH3: 0px;
+    --fontSizeH4: 18px;
+    --lineHeightH4: 1.2;
+    --letterSpacingH4: 0px;
+    --fontSizeH5: 16px;
+    --lineHeightH5: 1.2;
+    --letterSpacingH5: 0px;
+    --fontSizeH6: 14px;
+    --lineHeightH6: 1.2;
+    --letterSpacingH6: 0px;
+    --fontSizeMbH1: 30.0px;
+    --fontHeroSizeMbH1: 30.0px;
+} */

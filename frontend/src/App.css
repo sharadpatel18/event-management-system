@@ -1,0 +1,191 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+
+.nav-main {
+   background: linear-gradient(336deg, rgba(9, 62, 58, 0) 0%, rgba(9, 62, 58, 1) 100%);
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.nav-container {
+   width: 98vw;
+   height: 10vh;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: white;
+   font-size: 30px;
+}
+
+.nav-container h1 {
+   margin-left: 20px;
+}
+
+.nav-container ul {
+   font-size: 30px;
+   display: flex;
+   overflow: hidden;
+   justify-content: center;
+}
+
+.nav-container li{
+   margin: 20px 20px;
+}
+
+.home-main {
+   width: 100vw;
+   height: 100vh;
+   background: url('https://groovy.mediasource.mx/hubfs/groovy/hero.webp'), linear-gradient(336deg, rgba(9, 62, 58, 0) 0%, rgba(9, 62, 58, 1) 100%);
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.home-container{
+   width: 80vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.home-details{
+   width: 40vw;
+   height: 80vh;
+   background: linear-gradient(336deg, rgba(159, 199, 196, 0) 0%, rgb(156, 177, 175) 100%);
+   border-radius: 30px 0px 0px 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.home-details h1{
+   width: 30vw;
+   color: white;
+   font-size: 40px;
+   font-weight: 300;
+   margin-bottom: 20px;
+}
+.home-details h1 b{
+   font-weight: 900;
+}
+
+.home-details ol{
+   width: 30vw;
+   color: white;
+   font-size: 20px;
+}
+
+.home-details ol li{
+   margin: 5px 0px;
+}
+
+.home-details div{
+   width: 30vw;
+   margin: 10px 0px;
+}
+
+.home-details div button{
+   font-size: 18px;
+   padding: 10px;
+   background-color: #1EBEB1;
+   color: white;
+   border: 0;
+   border-radius: 10px;
+   transform: all;
+   transition-duration: .5s;
+   transition-timing-function: ease-in-out;
+}
+
+.home-details div button:hover{
+   background-color: #2e504d;
+}
+
+.home-details div a{
+   margin: 0px 20px;
+   font-size: 20px;
+   color: #1EBEB1;
+   cursor: crosshair;
+}
+
+.home-events{
+   width: 40vw;
+   height: 80vh;
+   background: linear-gradient(336deg, rgba(9, 62, 58, 0) 0%, rgba(9, 62, 58, 1) 100%);
+   border-radius: 0px 30px 30px 0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.first{
+   display: flex;
+   width: 36vw;
+   height: 28vh;
+   justify-content: center;
+   align-items: center;
+}
+
+.second{
+   display: flex;
+   width: 36vw;
+   height: 28vh;
+   justify-content: center;
+   align-items: center;
+}
+
+.third{
+   display: flex;
+   width: 36vw;
+   height: 28vh;
+}
+
+.part{
+   width: 12vw;
+   height: 20vh;
+   margin: 0px 10px;
+   border-radius: 10px;
+}
+
+.part img{
+   width: 12vw;
+   height: 20vh;
+   border-radius: 30px;
+}
+
+.about-details{
+   width: 40vw;
+   height: 80vh;
+   background: linear-gradient(336deg, rgba(159, 199, 196, 0) 0%, rgb(156, 177, 175) 100%);
+   border-radius: 30px 0px 0px 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.heading{
+   width: 30vw;
+   font-size: 60px;
+   font-weight: 500;
+   color: white;
+   padding-bottom: 5px;
+   border-bottom: 2px solid white;
+}
+
+.description{
+   margin-top: 10px;
+   width: 30vw;
+   font-size: 30px;
+   font-weight: 100;
+   color: white;
+}
